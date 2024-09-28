@@ -12,6 +12,7 @@
                 <title>Dashboard - Hỏi Dân IT</title>
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
             </head>
 
             <body class="sb-nav-fixed">
@@ -32,7 +33,7 @@
                                             <h1>Update a user</h1>
                                             <hr />
                                             <form:form method="post" action="/admin/user/update"
-                                                modelAttribute="newUser">
+                                                modelAttribute="newUser" class="row">
                                                 <div class="mb-3" style="display: none;">
                                                     <label class="form-label">Id:</label>
                                                     <form:input type="text" class="form-control" path="id" />
@@ -59,7 +60,9 @@
                                                     <form:input type="text" class="form-control" path="address" />
                                                 </div>
 
-                                                <button type="submit" class="btn btn-warning">Update</button>
+                                                <div class="col-12 mb-5">
+                                                    <button type="submit" class="btn btn-warning">Update</button>
+                                                </div>
                                             </form:form>
                                         </div>
                                     </div>

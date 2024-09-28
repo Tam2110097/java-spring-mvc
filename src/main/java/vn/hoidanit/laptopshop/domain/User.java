@@ -14,9 +14,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "users")
 public class User {
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String email;
@@ -25,10 +25,10 @@ public class User {
     private String address;
     private String phone;
 
-    private String avatar;  
+    private String avatar;
 
     // roleId
-    //User many -> to one -> role
+    // User many -> to one -> role
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
@@ -36,8 +36,25 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
-    public User() {}
-    
+    public User() {
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     public long getId() {
         return id;
     }
@@ -89,7 +106,7 @@ public class User {
     public String getAvatar() {
         return avatar;
     }
-    
+
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
