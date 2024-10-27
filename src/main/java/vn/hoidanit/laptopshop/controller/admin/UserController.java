@@ -85,6 +85,7 @@ public class UserController {
 
         String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(hoidanit.getPassword());
+
         hoidanit.setAvatar(avatar);
         hoidanit.setPassword(hashPassword);
         hoidanit.setRole(this.userService.getRoleByName(hoidanit.getRole().getName()));
