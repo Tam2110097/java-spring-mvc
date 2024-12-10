@@ -50,7 +50,7 @@ public class UserController {
     public String getUsersPage(Model model) {
         List<User> users = this.userService.getAllUsers();
         model.addAttribute("users1", users);
-        return "/admin/user/show";
+        return "admin/user/show";
     }
 
     @RequestMapping("/admin/user/{id}")
@@ -80,7 +80,7 @@ public class UserController {
 
         // validate
         if (newUserBindingResult.hasErrors()) {
-            return "/admin/user/create";
+            return "admin/user/create";
         }
 
         String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
@@ -124,7 +124,7 @@ public class UserController {
         // User user = new User();
         // user.setId(id);
         model.addAttribute("newUser", new User());
-        return "/admin/user/delete";
+        return "admin/user/delete";
     }
 
     @PostMapping("/admin/user/delete")
